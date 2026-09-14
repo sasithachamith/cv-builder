@@ -1,0 +1,70 @@
+/* ═════════════════════════════════════════════
+   Coach marks — Android-style tap targets
+═════════════════════════════════════════════ */
+.tap-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 240;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.22s ease;
+}
+.tap-ring {
+  position: fixed;
+  z-index: 242;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3), 0 0 34px rgba(79, 70, 229, 0.9);
+  pointer-events: none;
+  animation: tapPulse 1.7s ease-in-out infinite;
+}
+@keyframes tapPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.14); }
+}
+.tap-card {
+  position: fixed;
+  z-index: 243;
+  width: min(324px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  animation: tapPop 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.25);
+}
+@keyframes tapPop { from { transform: scale(0.9); opacity: 0; } }
+.tap-card h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.tap-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tap-card p { font-size: 13px; color: #475569; line-height: 1.55; margin: 7px 0 13px; }
+.tap-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.tap-btn {
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 18px;
+  font-weight: 800;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+.tap-btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; }
+.tap-btn.ghost { background: #f1f5f9; color: #475569; }
+.tap-btn:active { transform: scale(0.96); }
