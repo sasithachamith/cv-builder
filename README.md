@@ -14,6 +14,23 @@ No sign-up, no fees — everything runs in your browser, and your data never lea
 - **Auto-save** to `localStorage`; sample data pre-filled so the app makes sense immediately.
 - Empty sections are hidden automatically on the CV — partial data never shows blank blocks.
 
+## Free hosting
+
+Site URL: **https://sasithachamith.github.io/cv-builder/**
+
+GitHub Pages hosts this static app for free. The `Deploy to GitHub Pages`
+workflow builds and publishes pushes to `main` and `arena/01a0a6b0-cv-builder`.
+No hosting secrets or backend server are needed.
+
+Repository setup:
+
+1. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. In **Settings → Environments → github-pages**, allow each deployment branch
+   under **Deployment branches and tags**.
+3. Push to an allowed branch and check the workflow in the **Actions** tab.
+
+Vite uses relative asset paths so the site works under `/cv-builder/`.
+
 ## Getting started
 
 ```bash
